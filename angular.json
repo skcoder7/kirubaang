@@ -20,10 +20,9 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
+            ""./assets": [
               "src/favicon.ico",
-              
-              {"glob": "**/*", "input": "src/assets", "output": "./assets"}
+              "src/"./assets"
             ],
             "styles": [
               "src/styles.css"
@@ -83,9 +82,9 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
+            ""./assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/"./assets"
             ],
             "styles": [
               "src/styles.css"
