@@ -1,0 +1,133 @@
+<nav class="absolute w-full left-0 top-0 min-h-screen z-50 {{isslidebarshowing?'flex':'hidden'}}">
+
+    <div class="bg-white  shadow-xl w-full md:max-w-sm h-[1000px] lg:hidden">
+    
+    <div class="flex justify-end p-3">
+    
+    
+
+      <svg (click)="this.closesidebar()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+      
+    
+    </div>
+    
+     
+    
+    <div>
+    
+      <div class="mt-2"><app-phone></app-phone></div>
+    
+      <div class="mt-2"><app-email></app-email></div>
+    
+     <div (click)="this.closesidebar()" class="mt-4 text-center"> <app-auth></app-auth></div>
+    
+    <div class="mt-4">
+    
+      <app-menu></app-menu>
+    
+    </div>
+    
+     <div class="mt-3"> <app-sociallink></app-sociallink></div>
+    
+     
+    
+    </div>
+    
+     
+    
+    </div>
+    
+    <div (click)="this.closesidebar()" class="bg-gray-900 opacity-60 hidden md:block md:w-full">
+    
+     
+    
+    </div>
+    
+    </nav>
+    
+     
+    
+    <header class="absolute w-full z-40">
+    
+      <div class="bg-slate-800 hidden lg:block">
+    
+        <div class="container text-white py-2">
+    
+            <ul class="flex  justify-between">
+    
+              <li>All course 28% off for <span class="text-emerald-500">Liberian people’s.</span></li>
+    
+              <li>
+    
+                <img src="../assets/shapes/shape-1.webp" alt="" class="src">
+    
+              </li>
+    
+              <li class="">
+    
+               <app-phone></app-phone> 
+    
+              </li>
+    
+              <li class="">
+               <app-email></app-email>
+    
+              </li>
+    
+              <li>
+    
+                <img src="../assets/shapes/shape-2.webp" alt="" class="sr">
+    
+              </li>
+              <app-sociallink></app-sociallink>
+    
+            </ul>
+    
+        </div>
+    
+      </div>
+    
+      <!-- fixed top-0 w-full bg-white shadow-xl -->
+    
+     <div class=" {{this.ismenucroll?'fixed top-0 w-full bg-white shadow-xl':'pt-10'}} ">
+    
+      <div class="container">
+    
+        <div class="  py-2 flex items-center justify-between {{this.ismenucroll?'':'border-2'}} border-emerald-500 border-opacity-30  rounded-xl ">
+    
+        <a href="" class="ml-3">
+    
+          <img src="../assets/logo/logo.png" alt="" class="src">
+    
+        </a>
+
+    <svg (click)="this.opensidebar()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 lg:hidden">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>
+    
+       <app-menu class="hidden lg:block"></app-menu>
+    
+       <app-auth class="hidden lg:block"></app-auth>
+    
+      </div>
+    
+    </div>
+    
+     
+    
+     </div>
+    
+     
+    </header>
+    
+     <button *ngIf="ismenucroll" (click)="scrolltotop()" class="   fixed bottom-5 right-5 w-10 h-10 text-white transition-all duration-300  bg-emerald-600 hover:bg-slate-800 rounded-full">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6 mx-auto">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+      </svg>
+
+     </button>
+    
+    <router-outlet></router-outlet>

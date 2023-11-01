@@ -1,0 +1,37 @@
+<section class="pt-64 bg-emerald-100 min-h-screen flex">
+
+    <div class="container grid grid-cols-1 lg:grid-cols-1 gap-4  bg-slate-900 rounded-lg shadow-xl ">
+    <div class="sm:ml-36 lg:ml-36 h-[400px] ">
+     <form #f="ngForm" novalidate (ngSubmit)="f.form.valid && onsubit()">
+    
+      <ul class=" mt-5">
+        <li class="mb-4">
+          <label class="text-white">Firstname:</label><br>
+          <input class="border-1 border-slate-500 rounded-lg w-[90%] lg:w-[60%]" name="name" type="text" [(ngModel)]="fieldname.name" #name="ngModel" required>
+          <span class="text-red-700" *ngIf="this.submit&&name.errors?.['required']">Name is required </span>
+        </li>
+        <li  class="mb-4">
+          <label class="text-white">Lastname:</label><br>
+          <input class="border-1 border-slate-500 rounded-lg w-[90%] lg:w-[60%]" type="text">
+        </li>
+        <li  class="mb-4">
+          <label class="text-white">Email:</label><br>
+          <input class="border-1 border-slate-500 rounded-lg w-[90%] lg:w-[60%]" type="text">
+        </li>
+        <li  class="mb-4">
+          <label class="text-white" >Mobile:</label><br>
+          <input class="border-1 border-slate-500 rounded-lg w-[90%] lg:w-[60%]" type="text">
+        </li>
+      </ul>
+    
+     </form>
+    
+    <input class="bg-blue-700 text-white px-3 py-2 rounded-lg" type="submit" value="Register" (click)="submit=true" >
+      </div>
+    
+    </div>
+    
+        </section>
+    
+    
+       

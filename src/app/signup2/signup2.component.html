@@ -1,0 +1,87 @@
+<section class="pt-64 bg-emerald-100 min-h-screen flex">
+
+
+
+        <div class=" w-full  relative " >
+            <div class="text-center " *ngIf="this.loading">
+                <div class="spinner-border text-yellow-300 absolute right-0 mr-72 top-36 w-40 h-40  " role="status">
+                    <span class="sr-only">Loading....</span>
+                </div>
+            </div> 
+     
+
+    <div class="container  relative overflow-hidden   grid grid-cols-1 lg:grid-cols-1 gap-4  bg-slate-900  rounded-lg shadow-xl  ">
+
+    
+        
+            <div class=" animate-pulse  opacity-10 border-2 border-white rounded-full lg:w-[35rem] lg:h-[35rem] w-96 h-96 absolute top-0 left-0 lg:-top-64" > </div>
+
+        <div class=" animate-pulse opacity-10 border-2 border-white rounded-full lg:w-[35rem] lg:h-[35rem] w-96 h-96 absolute bottom-0 right-0 lg:-bottom-64 lg:right-0" > </div>
+    
+        <div class="animate-pulse  opacity-10 border-2 border-white rounded-full lg:w-[35rem] lg:h-[35rem] w-96 h-96 absolute -top-[50%] left-[40%] lg:-bottom-96 lg:left-96" > </div>
+    
+        <div class=" animate-pulse  opacity-10 border-2 border-white rounded-full lg:w-[35rem] lg:h-[35rem] w-96 h-96 absolute -bottom-[50%] right-[40%] lg:-top-64 lg:left-96" > </div>
+      
+
+    <div class="sm:ml-36 lg:ml-36 z-40 ">
+     <form #f="ngForm" novalidate (ngSubmit)="f.form.valid&&onsubmit()">
+    
+      <ul class=" mt-5">
+        <li class="mb-4">
+          <label class="text-white">Firstname:</label><br>
+          <input class="border-1 border-slate-500 rounded-lg w-[90%]  lg:w-[60%] h-8" name="name" type="text" [(ngModel)]="fieldname.name" #name="ngModel" required>
+          <span class="text-green-600 relative" *ngIf="this.submit&&name.errors?.['required']"> Name is required..
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-yellow-300 absolute left-32 -bottom-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+            </svg>
+             </span>
+        </li>
+        <li  class="mb-4">
+          <label class="text-white">Lastname:</label><br>
+          <input class="border-1 border-slate-500 rounded-lg w-[90%] lg:w-[60%] h-8" name="lname" type="text" [(ngModel)]="fieldname.lname" #lname="ngModel" required>
+          <span class="text-green-600 relative" *ngIf="this.submit&&lname.errors?.['required']"> Lastname is required..
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-yellow-300 absolute left-32 -bottom-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+            </svg> </span>
+        </li>
+        <li  class="mb-4">
+          <label class="text-white">Email:</label><br>
+          <input class="border-1 border-slate-500 rounded-lg w-[90%] lg:w-[60%] h-8" name="email" type="text" [(ngModel)]="fieldname.email" #email="ngModel" required>
+          <span class="text-green-600 relative" *ngIf="this.submit&&email.errors?.['required']"> Email is required..
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-yellow-300 absolute left-32 -bottom-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+            </svg>
+          </span>
+        </li>
+        <li  class="mb-4">
+          <label class="text-white" >Password:</label><br>
+          <input class="border-1 border-slate-500 rounded-lg w-[90%] lg:w-[60%]  h-8 " type="text" name="password" [(ngModel)]="fieldname.password" #password="ngModel" required minlength="8">
+          <span class="text-green-600 relative" *ngIf="this.submit&&password.errors?.['required']"> Password is required...   
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-yellow-300 absolute left-40  -bottom-0">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+            </svg>
+          </span>
+          <span class="text-green-600 " *ngIf="this.submit&&password.errors?.['minlength']">Minimum Length of password is 8 characters 
+          </span>
+        </li>
+      </ul>
+      
+     </form>
+    
+     <input class="bg-blue-700 text-white px-3 py-2 rounded-lg mt-4 mb-4 btn btn-login" type="submit" value="Register" (click)="submit=true" [disabled]="this.loading">
+     
+     <div class="relative">
+        <p class="absolute left-36 bottom-5 text-white text-sm">Already you have a account..? Please<a class="text-yellow-400 hover:text-emerald-600 transition-all duration-500" href="" [routerLink]="['../signin2']"> Login</a></p>
+      </div>
+      </div>
+
+      </div>
+
+    
+    </div>
+    
+    
+        </section>
+    
+    
+       
