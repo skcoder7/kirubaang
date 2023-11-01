@@ -1,5 +1,5 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "$schema": "./assetsnode_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -20,9 +20,9 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            ""./assets": [
+            ""./assetsassets": [
               "src/favicon.ico",
-              "src/"./assets"
+              "src/"./assetsassets"
             ],
             "styles": [
               "src/styles.css"
@@ -82,9 +82,9 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            ""./assets": [
+            ""./assetsassets": [
               "src/favicon.ico",
-              "src/"./assets"
+              "src/"./assetsassets"
             ],
             "styles": [
               "src/styles.css"
